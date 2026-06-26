@@ -65,30 +65,43 @@ The raw field datasets used to initialize this pipeline are not hosted directly 
 > **Data Availability Statement:** Raw biodiversity data, species counts, and community metrics are available from the corresponding authors upon reasonable request.
 
 ### 🔹 Repository Tree & Intermediate Outputs
-To guarantee full reproducibility, this repository hosts all intermediate outputs, optimized model configurations, statistical logs, and structural maps generated throughout the pipeline runs. The local directory structure is organized as follows:
+To guarantee full reproducibility, this repository hosts all intermediate numerical results, optimized model hyperparameters, and validation performance figures generated throughout the pipeline runs. 
+
+*Note: The final predictive raster maps (`.tif`) are excluded from this repository due to file size constraints.*
+
+The directory structure is organized as follows:
 
 ```text
-├── 📁 RF/                               # Random Forest Intermediate Results
+📂 biodiversity-mapping-pipeline/
+├── 📁 RF/                               # Random Forest Intermediate Outputs
 │   ├── 📁 Clusters/
 │   │   ├── 📁 Cluster1/
-│   │   │   ├── 📄 RF_Ensemblescores.csv       # Iterative performance metrics for Cluster 1
-│   │   │   └── 📄 RF_Ensembleparameters.csv   # Best hyperparameters extracted from Tuning
+│   │   │   ├── 📄 RF_Ensemblescores.csv       # Cross-validation iteration scores for Cluster 1
+│   │   │   ├── 📄 RF_Ensembleparameters.csv   # Best hyperparameters from Tuning
+│   │   │   └── 🖼️ ObservedVSPredicted_...jpg  # Training & Validation performance plots
 │   │   ├── 📁 Cluster2/
-│   │   │   ├── 📄 RF_Ensemblescores.csv       # Iterative performance metrics for Cluster 2
-│   │   │   └── 📄 RF_Ensembleparameters.csv   # Best hyperparameters extracted from Tuning
+│   │   │   ├── 📄 RF_Ensemblescores.csv       # Cross-validation iteration scores for Cluster 2
+│   │   │   ├── 📄 RF_Ensembleparameters.csv   # Best hyperparameters from Tuning
+│   │   │   └── 🖼️ ObservedVSPredicted_...jpg  # Training & Validation performance plots
 │   │   └── 📁 Cluster3/
-│   │       ├── 📄 RF_Ensemblescores.csv       # Iterative performance metrics for Cluster 3
-│   │       └── 📄 RF_Ensembleparameters.csv   # Best hyperparameters extracted from Tuning
+│   │       ├── 📄 RF_Ensemblescores.csv       # Cross-validation iteration scores for Cluster 3
+│   │       ├── 📄 RF_Ensembleparameters.csv   # Best hyperparameters from Tuning
+│   │       └── 🖼️ ObservedVSPredicted_...jpg  # Training & Validation performance plots
 │   │
 │   ├── 📁 Diversity/
-│   │   ├── 📄 RF_Ensemblescores.csv           # Iterative performance metrics for Diversity
-│   │   ├── 📄 RF_Ensembleparameters.csv       # Best hyperparameters extracted from Tuning
-│   │   └── 📄 imageToDrive_meanModel_Diversity_RF.tif  # Exported macroecological Predictive Raster
+│   │   ├── 📄 RF_Ensemblescores.csv           # Performance metrics for Diversity model
+│   │   ├── 📄 RF_Ensembleparameters.csv       # Best hyperparameters for Diversity model
+│   │   └── 🖼️ MapDiversityCoefVar.jpeg        # Statistical distribution and coefficient of variation map
 │   │
-│   └── 📁 Richness/
-│       ├── 📄 RF_Ensemblescores.csv           # Iterative performance metrics for Species Richness
-│       ├── 📄 RF_Ensembleparameters.csv       # Best hyperparameters extracted from Tuning
-│       └── 📄 imageToDrive_meanModel_Richness_RF.tif   # Exported macroecological Predictive Raster
+│   ├── 📁 Richness/
+│   │   ├── 📄 RF_Ensemblescores.csv           # Performance metrics for Species Richness model
+│   │   ├── 📄 RF_Ensembleparameters.csv       # Best hyperparameters for Species Richness model
+│   │   └── 🖼️ MapRichnessCoefVar.jpeg         # Statistical distribution and coefficient of variation map
+│   │
+│   └── 📁 Endemicity/
+│       ├── 📄 RF_Ensemblescores.csv           # Performance metrics for Endemicity model
+│       ├── 📄 RF_Ensembleparameters.csv       # Best hyperparameters for Endemicity model
+│       └── 🖼️ MapEndemicityCoefVar.jpeg       # Statistical distribution and coefficient of variation map
 │
-├── 📄 DataTA_STEP0_...ipynb             # Execution Scripts (Steps 0 to 5)
+├── 📄 DataTA_STEP0_...ipynb             # Execution Notebooks (Steps 0 to 5)
 └── 📄 README.md                         # Project Documentation
