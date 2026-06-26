@@ -72,8 +72,7 @@ To guarantee full reproducibility, this repository hosts all intermediate numeri
 The directory structure is organized as follows:
 
 ```text
-📂 biodiversity-mapping-pipeline/
-├── 📁 RF/                               # Random Forest Intermediate Outputs
+├── 📁 RF/                                     # Random Forest Intermediate Outputs
 │   ├── 📁 Clusters/
 │   │   ├── 📁 Cluster1/
 │   │   │   ├── 📄 RF_Ensemblescores.csv       # Cross-validation iteration scores for Cluster 1
@@ -98,10 +97,8 @@ The directory structure is organized as follows:
 │   │   ├── 📄 RF_Ensembleparameters.csv       # Best hyperparameters for Species Richness model
 │   │   └── 🖼️ MapRichnessCoefVar.jpeg         # Statistical distribution and coefficient of variation map
 │   │
-│   └── 📁 Endemicity/
-│       ├── 📄 RF_Ensemblescores.csv           # Performance metrics for Endemicity model
-│       ├── 📄 RF_Ensembleparameters.csv       # Best hyperparameters for Endemicity model
-│       └── 🖼️ MapEndemicityCoefVar.jpeg       # Statistical distribution and coefficient of variation map
+└── 📁 Endemicity/                             # 
+│       ├── 📄 Script_GEE.txt                  # Google Earth Engine code
 │
 ├── 📄 DataTA_STEP0_...ipynb             # Execution Notebooks (Steps 0 to 5)
 └── 📄 README.md                         # Project Documentation
