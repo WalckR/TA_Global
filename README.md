@@ -66,3 +66,38 @@ To install all the dependencies required to run the entire pipeline, execute the
 
 ```bash
 pip install numpy pandas scikit-learn matplotlib geopandas rasterio geemap earthengine-api
+
+## 📊 Data Availability & Intermediate Results
+
+### 🔹 Raw Data Policy
+The raw field datasets used to initialize this pipeline are not hosted directly in this repository due to privacy/licensing restrictions. However, they are fully available for academic and replication purposes:
+> **Data Availability Statement:** Raw biodiversity data, species counts, and community metrics are available from the corresponding authors upon reasonable request.
+
+### 🔹 Repository Tree & Intermediate Outputs
+To guarantee full reproducibility, this repository hosts all intermediate outputs, optimized model configurations, statistical logs, and structural maps generated throughout the pipeline runs. The local directory structure is organized as follows:
+
+```text
+├── 📁 RF/                               # Random Forest Intermediate Results
+│   ├── 📁 Clusters/
+│   │   ├── 📁 Cluster1/
+│   │   │   ├── 📄 RF_Ensemblescores.csv       # Iterative performance metrics for Cluster 1
+│   │   │   └── 📄 RF_Ensembleparameters.csv   # Best hyperparameters extracted from Tuning
+│   │   ├── 📁 Cluster2/
+│   │   │   ├── 📄 RF_Ensemblescores.csv       # Iterative performance metrics for Cluster 2
+│   │   │   └── 📄 RF_Ensembleparameters.csv   # Best hyperparameters extracted from Tuning
+│   │   └── 📁 Cluster3/
+│   │       ├── 📄 RF_Ensemblescores.csv       # Iterative performance metrics for Cluster 3
+│   │       └── 📄 RF_Ensembleparameters.csv   # Best hyperparameters extracted from Tuning
+│   │
+│   ├── 📁 Diversity/
+│   │   ├── 📄 RF_Ensemblescores.csv           # Iterative performance metrics for Diversity
+│   │   ├── 📄 RF_Ensembleparameters.csv       # Best hyperparameters extracted from Tuning
+│   │   └── 📄 imageToDrive_meanModel_Diversity_RF.tif  # Exported macroecological Predictive Raster
+│   │
+│   └── 📁 Richness/
+│       ├── 📄 RF_Ensemblescores.csv           # Iterative performance metrics for Species Richness
+│       ├── 📄 RF_Ensembleparameters.csv       # Best hyperparameters extracted from Tuning
+│       └── 📄 imageToDrive_meanModel_Richness_RF.tif   # Exported macroecological Predictive Raster
+│
+├── 📄 DataTA_STEP0_...ipynb             # Execution Scripts (Steps 0 to 5)
+└── 📄 README.md                         # Project Documentation
