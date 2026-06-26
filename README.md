@@ -67,6 +67,8 @@ To install all the dependencies required to run the entire pipeline, execute the
 ```bash
 pip install numpy pandas scikit-learn matplotlib geopandas rasterio geemap earthengine-api
 
+---
+
 ## 📊 Data Availability & Intermediate Results
 
 ### 🔹 Raw Data Policy
