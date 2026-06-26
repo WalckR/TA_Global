@@ -58,17 +58,6 @@ Dedicated scripts for the styling, plot assembly, and generation of high-resolut
 
 ---
 
-## 🛠️ Installation & Dependencies
-
-This project was developed using **Python 3.10** within a Conda/Virtual environment named `Amibea`.
-
-To install all the dependencies required to run the entire pipeline, execute the following command:
-
-```bash
-pip install numpy pandas scikit-learn matplotlib geopandas rasterio geemap earthengine-api
-
----
-
 ## 📊 Data Availability & Intermediate Results
 
 ### 🔹 Raw Data Policy
